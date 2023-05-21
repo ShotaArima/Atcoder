@@ -15,6 +15,7 @@ a=8
 b=1
 
 scores=[4,1,9,3,a,b]
+
 for x  in scores:
     if x==0:
         print("失格です")
