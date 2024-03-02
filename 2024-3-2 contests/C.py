@@ -1,17 +1,14 @@
+def is_palindrome(n):
+    # 数字を文字列に変換し、逆順と比較して回文かどうかを判定
+    return str(n) == str(n)[::-1]
+
 n = int(input())
 
-result = n ** (1/3)
+# N以下の正整数であって回文立方数であるものの最大値を求める
+result = 0
+for x in range(int(n ** (1/3)), 0, -1):
+    cube = x ** 3
+    if cube <= n and is_palindrome(cube):
+        result = max(result, cube)
 
-def is_palindrome(tmp):
-    # 文字列を逆順にして比較
-    reversed_tmp = tmp[::-1]
-    return tmp == reversed_tmp
-
-# 回文かの判定
-for result in range(int(result), 0, -1):
-    result_3 = result ** 3
-    tmp = str(result_3)
-    if is_palindrome(tmp):
-        print(result_3)
-        break
-
+print(result)
