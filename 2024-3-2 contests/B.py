@@ -5,7 +5,7 @@ for i in range(n):
     tmp = list(map(int, input().split()))
     a.append(tmp)
 
-print(f"a={a}")
+# print(f"a={a}")
 
 # 各辺があるかを確認
 tmp = []
