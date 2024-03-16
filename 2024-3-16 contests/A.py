@@ -1,18 +1,11 @@
 s = input()
-# print(s)
 
-reversed_s = s[::-1]
-fixed_s = ""
-for char in reversed_s:
-    if char == ">":
-        fixed_s += "<"
-    elif char == "<":
-        fixed_s += ">"
-    else:
-        fixed_s += char
-# print(fixed_s)
-
-if fixed_s == s:
-    print("Yes")
-else:
+# 最初の文字が < であり、最後の文字が > であることを確認
+if s[0] != "<" or s[-1] != ">":
     print("No")
+else:
+    # 最初と最後の文字を除いた部分がすべて = であることを確認
+    if all(char == "=" for char in s[1:-1]):
+        print("Yes")
+    else:
+        print("No")
