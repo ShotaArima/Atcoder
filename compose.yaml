@@ -1,0 +1,7 @@
+services:
+  atcoder:
+    image: python:3.11
+    volumes:
+      - .:/app
+    working_dir: /app
+    tty: true
